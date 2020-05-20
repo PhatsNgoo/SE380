@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="scripts/Script.js"></script>
+    <script src="scripts/export.js"></script>
+    <script src="scripts/enroll.js"></script>
+    <script src="scripts/lecturer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alasql/0.5.1/alasql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.7/xlsx.core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.13/jspdf.plugin.autotable.min.js"></script>
+    <title>DangKyHoc</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/popupwindow.css">
+    <div id="HeaderBar">
+        <div id="div1">
+            <img id="logo" src="./assets/logo.png" />
+            <img id="headbg" src="./assets/headbg.png" />
+            <div id="div3">
+                <p id="Username" style="display: inline;">CT1001</p>
+                <p2><button name="button.b" value="OK" type="button" onclick="logOut()">Đăng Xuất</button></p2>
+            </div>
+        </div>
+        <div id="div2">
+            <div id="admintaskbar" style="display: none;">
+                <p5><button class="hvr-pop" name="button" value="OK" type="button" onclick="hello()">Quản lý người dùng</button></p5>
+                <p7><button class="hvr-pop" name="button" value="OK" type="button" onclick="hello()">Hộp Thư Báo</button></p7>
+            </div>
+            <div id="usertaskbar" style="display: none;">
+                <p3><button class="hvr-pop" name="button" value="OK" type="button" onclick="openCurriculumTab()">Xem Chương Trình Học</button></p3>
+                <p4><button class="hvr-pop" name="button" value="OK" type="button" onclick="openScheduleTab()">Xem thời khóa biểu</button></p4>
+                <p4><button class="hvr-pop" name="button" value="OK" type="button" onclick="generateStudentSemesterArray()">Xem thời khóa biểu cá nhân</button></p4>
+                <p5><button class="hvr-pop" name="button" value="OK" type="button" onclick="openRegisterTab()">Đăng Ký Học</button></p5>
+                <p6><button class="hvr-pop" name="button" value="OK" type="button" onclick="GetData('Scoreboard')">Bảng Điểm</button></p6>
+                <p7><button class="hvr-pop" name="button" value="OK" type="button" onclick="hello()">Hộp Thư Báo</button></p7>
+            </div>
+            <div id="assistanttaskbar" style="display: none;">
+                <p3><button class="hvr-pop" name="button" value="OK" type="button" onclick="openCurriculumTab()">Quản Lý Chương Trình</button></p3>
+                <p4><button class="hvr-pop" name="button" value="OK" type="button" onclick="openScheduleTab()">Quản Lý Thời Khóa biểu</button></p4>
+                <p5><button class="hvr-pop" name="button" value="OK" type="button" onclick="openRegisterTabAdmin()">Ép cứng</button></p5>
+                <p6><button class="hvr-pop" name="button" value="OK" type="button" onclick="openScoreboardTab()">Quản lý bảng Điểm</button></p6>
+                <p6><button class="hvr-pop" name="button" value="OK" type="button" onclick="openViewScheduleTab()">Xem thời khóa biểu cá nhân</button></p6>
+                <p5><button class="hvr-pop" name="button" value="OK" type="button" onclick="openReportTab()">Thống kê báo cáo</button></p5>
+                <p7><button class="hvr-pop" name="button" value="OK" type="button" onclick="hello()">Hộp Thư Báo</button></p7>
+            </div>
+            <div id="teachertaskbar" style="display: none;">
+                <p4><button class="hvr-pop" name="button" value="OK" type="button" onclick="openScheduleTab()">Xem lịch dạy</button></p4>
+                <p7><button class="hvr-pop" name="button" value="OK" type="button" onclick="hello()">Hộp Thư Báo</button></p7>
+            </div>
+        </div>
+
+    </div>
+</head>
+
+<body>
+    <div class="modal" id="scheduleForm">
+        <form class="form-container">
+            <h1>Import Thời khóa biểu</h1>
+
+            <label>Vui lòng chọn file để tiến hành import</label>
+            <input type="file" id="ScheduleFile" value="Import Data">
+            <br>
+            <label>Kỳ học</label>
+            <label>Nhóm học</label>
+            <label>Năm học</label>
+            <br>
+
+            <select id="semester">
+				<option value="0">Chọn kỳ học</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+			</select>
+            <select id="group">
+				<option value="0">Chọn nhóm học</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+			</select>
+            <select id="year">
+				<option value="0">Chọn năm học</option>
+				<option value="2016">2016</option>
+				<option value="2017">2017</option>
+				<option value="2018">2018</option>
+				<option value="2019">2019</option>
+				<option value="2020">2020</option>
+			</select>
+            <button type="button" class="btn" onclick="importSchedule()">Cập Nhật</button>
+            <button type="button" class="btncancel" onclick="closeForm()">Đóng</button>
+        </form>
+    </div>
+    <div class="modal" id="scoreboardForm">
+        <form class="form-container">
+            <h1>Import Bảng Điểm</h1>
+
+            <label>Vui lòng chọn file để tiến hành import</label>
+            <input type="file" id="ScoreboardFile" value="Import Data">
+
+
+            <button type="button" class="btn" onclick="importScoreBoard()">Cập Nhật</button>
+            <button type="button" class="btncancel" onclick="closeForm()">Đóng</button>
+        </form>
+    </div>
+    <div class="modal" id="curriculumForm">
+        <form class="form-container">
+            <h1>Import Chương Trình Học</h1>
+            <label>Vui lòng chọn file để tiến hành import</label>
+            <input type="file" id="CurriculumFile" value="Import Data">
+            <br>
+
+            <button type="button" class="btn" onclick="importCurriculum()">Cập Nhật</button>
+            <button type="button" class="btncancel" onclick="closeForm()">Đóng</button>
+        </form>
+    </div>
+    <div class="modal" id="registerForm">
+        <form class="form-container">
+            <h1>Đăng ký học</h1>
+
+            <label>Vui lòng chọn lớp để tiến hành đăng ký</label>
+            <select id="SubjectList">
+                
+            </select>
+            <br>
+            <button type="button" class="btn" onclick="subjectEnrollment()">Đăng Ký</button>
+            <button type="button" class="btncancel" onclick="closeForm()">Đóng</button>
+        </form>
+    </div>
+    <div class="modal" id="cancelEnrollForm">
+        <form class="form-container">
+            <h1>Hủy đăng ký lớp học</h1>
+
+            <label>Bạn có chắc chắn muốn hủy đăng ký lớp học này?</label>
+            <br>
+            <div id="buttonCancelEnrollForm">
+
+            </div>
+        </form>
+    </div>
+    <div class="modal" id="cancelForceEnrollConfirm">
+        <form class="form-container">
+            <h1>Hủy đăng ký lớp học</h1>
+
+            <label>Bạn có chắc chắn muốn hủy đăng ký lớp học này?</label>
+            <br>
+            <div id="buttonCancelForceEnrollConfirm">
+
+            </div>
+        </form>
+    </div>
+    <div id="ReportTab" style="display: none;">
+        <label> Export danh sách lớp của giảng viên</label><br>
+        <input type="text" id="LecturerID" placeholder="Nhập mã giảng viên">
+        <select id="LecturerScheduleExportSelect">
+                <option value="0">Chọn học kỳ</option>
+            </select>
+        <button type="button" id="FindStudentForEnrollButton" onclick="exportLecturerScheduleAdmin(document.getElementById('LecturerID').value,document.getElementById('LecturerScheduleExportSelect').value)">Export</button>
+        <br>
+        <label> Export danh sách lớp mở trong kỳ</label><br>
+        <select id="ExportClassroomSelect">
+                <option value="0">Chọn học kỳ</option>
+            </select>
+        <button type="button" id="FindStudentForEnrollButton" onclick="exportClassroom(document.getElementById('ExportClassroomSelect').value)">Export</button>
+
+    </div>
+    <div id="PersonalScheduleTab" style="display: none;">
+        <input type="text" id="PersonalID" placeholder="Nhập mã người dùng">
+        <button type="button" id="ViewPersonalScheduleButton" onclick="getPersonalSchedule(document.getElementById('PersonalID').value)">Tìm</button>
+    </div>
+    <div id="div4">
+        <select id="ScheduleSelect" onchange="GetData('Schedule')" style="display: none;">
+				<option value="0">Chon hoc ky</option>
+			</select>
+
+        <div id="LecturerScheduleTab" style="display: none;">
+            <button onclick="exportLecturerSchedule(document.getElementById('ScheduleSelect').value)">Export</button>
+        </div>
+        <select id="CurriculumSelect" onchange="GetData('Curriculum')" style="display: none;">
+					<option value="0">Chon nganh</option>
+					<option value="TI">Khoa hoc may tinh</option>
+					<option value="TE">He Thong Thong Tin</option>
+            </select>
+        <select id="StudentScoreBoardSelect" onchange="GetStudentScoreboard(this.value)">
+                        <option value="0">Chon sinh vien</option>
+                </select>
+        <div id="StudentSchedule" style="display: none;">
+            <select id="StudentSemesterSelect" onchange="showStudentScheduleAsCalendar(this.value)">
+            <option value="0">Chon hoc ky</option>
+        </select>
+            <button id="ExportStudentSchedule" type="button" onclick="exportStudentSchedule()">Export</button>
+        </div>
+        <div id="importfeature" style="display: none;">
+            <button id="ImportScheduleButton" name="button" value="OK" type="button" onclick="openScheduleForm()">Import Thời Khóa Biểu</button>
+            <button id="ImportCurriculumButton" name="button" value="OK" type="button" onclick="openCurriculumForm()">Import Chương Trình Học</button>
+            <button id="ImportScoreboardButton" name="button" value="OK" type="button" onclick="openScoreboardForm()">Import Bảng Điểm</button>
+        </div>
+        <div id="ForceEnrollTab" style="display: none;">
+            <button id="ForceEnrollButton" name="button" value="OK" type="button" onclick="openForceEnrollForm()">Ép Cứng</button>
+
+            <button id="CancelForceEnrollButton" name="button" value="OK" type="button" onclick="openCancelForceEnrollForm()">Hủy Ép Cứng</button>
+            <div id="forceEnrollForm" style="display: none;">
+                <input type="text" id="StudentEnrollID" placeholder="Nhap ma sinh vien">
+                <button type="button" id="FindStudentForEnrollButton" onclick="generateStudentSubject(document.getElementById('StudentEnrollID').value)">Tìm</button>
+                <select id="forceEnrollSubjectList" onchange="generateSubjectClass(this.value)">
+                        <option value="0">Chọn môn học</option>
+                    </select>
+
+                <select id="forceEnrollClassList">
+                        <option value="0">Chọn lớp</option>
+                    </select>
+                <button type="button" class="btn" onclick="forceEnroll()">Ép Cứng</button>
+            </div>
+            <div id="cancelForceEnrollForm" style="display: none;">
+                <input type="text" id="StudentCancelEnrollID" placeholder="Nhap ma sinh vien">
+                <button type="button" id="FindStudentForEnrollButton" onclick="generateStudentScheduleAdmin(document.getElementById('StudentCancelEnrollID').value)">Tìm</button>
+                <select id="cancelForceEnrollClassList">
+                            <option value="0">Chọn lớp</option>
+                        </select>
+                <button type="button" class="btn" onclick="openCancelForceEnrollConfirm()">Hủy</button>
+            </div>
+        </div>
+        <div id="isNotInTimeToEnroll" style="display: none;">
+            <label>Ban khong the dang ky trong khoang thoi gian nay vui long quay lai vao luc khac</label>
+        </div>
+    </div>
+    <table id="ForceEnrollStudentSchedule">
+    </table>
+    <table id="datatable">
+    </table>
+    <table id="lecturerschedule">
+    </table>
+    <table id="studentschedule">
+    </table>
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>

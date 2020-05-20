@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="scripts/Script.js"></script>
+    <script src="scripts/login.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alasql/0.5.1/alasql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.7/xlsx.core.min.js"></script>
+    <title>DangKyHoc</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/popupwindow.css">
+    <link rel="stylesheet" type="text/css" href="styles/login.css">
+    <div id="HeaderBar">
+        <img id="logo" src="./assets/logo.png" />
+        <img id="headbg" src="./assets/headbg.png" />
+    </div>
+</head>
+
+<body>
+    <div class="header2">
+        <h2 style="margin-left: 75px;">
+            Thăng Long University
+        </h2>
+    </div>
+    <div class="header4">
+        <h3 style="margin-left: 175px;">
+            Login
+        </h3>
+    </div>
+    <form class="login-form-container">
+        <input id="Username" class="Username" type="text" placeholder="Username"><br>
+        <input id="Password" type="password" placeholder="Password">
+    </form>
+    <div class="login-btn">
+        <button onclick="verifyAccount()" style="width: 150px; margin-left: 125px;">Đăng nhập</button>
+    </div>
+</body>
+
+</html>

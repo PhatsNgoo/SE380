@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="03d85e10-2e6b-479a-9fe4-695c6e8a2d8a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Hosting" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1VCv0celNzu9dXtZX9IO2JrKWjR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/functions/modules/api/schedule" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Desktop\ProjectResources\Hosting\functions\modules\api\schedule" />
+      <recent name="C:\Users\ASUS\Desktop\ProjectResources\Hosting\functions\modules\api\major" />
+      <recent name="C:\Users\ASUS\Desktop\ProjectResources\Hosting\functions\modules\api\employee" />
+      <recent name="C:\Users\ASUS\Desktop\ProjectResources\Hosting\functions\modules\api\division" />
+      <recent name="C:\Users\ASUS\Desktop\ProjectResources\Hosting\functions\modules\api\curriculum" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="03d85e10-2e6b-479a-9fe4-695c6e8a2d8a" name="Default Changelist" comment="" />
+      <created>1576769670373</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576769670373</updated>
+      <workItem from="1576769673321" duration="716000" />
+      <workItem from="1576851836727" duration="9817000" />
+      <workItem from="1576866561695" duration="9000" />
+      <workItem from="1576866796778" duration="151000" />
+      <workItem from="1576923948374" duration="10291000" />
+      <workItem from="1577016482105" duration="1504000" />
+      <workItem from="1577188013245" duration="2384000" />
+      <workItem from="1577191028373" duration="11013000" />
+      <workItem from="1577255485348" duration="731000" />
+      <workItem from="1577283439244" duration="2873000" />
+      <workItem from="1577345364936" duration="19069000" />
+      <workItem from="1577607226988" duration="10607000" />
+      <workItem from="1577706954460" duration="5059000" />
+      <workItem from="1577807206665" duration="1177000" />
+      <workItem from="1577895093483" duration="3021000" />
+      <workItem from="1577956752909" duration="1907000" />
+      <workItem from="1578060662941" duration="2670000" />
+      <workItem from="1578071121148" duration="623000" />
+      <workItem from="1578228706840" duration="2996000" />
+      <workItem from="1578242631357" duration="6522000" />
+      <workItem from="1578313171649" duration="1201000" />
+      <workItem from="1578485496576" duration="2005000" />
+      <workItem from="1578502935303" duration="131000" />
+      <workItem from="1578574841450" duration="1414000" />
+      <workItem from="1578665144817" duration="1661000" />
+      <workItem from="1578839136091" duration="4011000" />
+      <workItem from="1578924568431" duration="2274000" />
+      <workItem from="1579016745364" duration="2283000" />
+      <workItem from="1579029890417" duration="2378000" />
+      <workItem from="1579194533139" duration="1981000" />
+      <workItem from="1580306673224" duration="6833000" />
+      <workItem from="1580390597024" duration="4689000" />
+      <workItem from="1580486786287" duration="1360000" />
+      <workItem from="1580576210479" duration="502000" />
+      <workItem from="1580576748945" duration="317000" />
+      <workItem from="1580577091289" duration="1888000" />
+      <workItem from="1580825202950" duration="3787000" />
+      <workItem from="1581007225772" duration="671000" />
+      <workItem from="1581438925650" duration="772000" />
+      <workItem from="1582033247333" duration="2759000" />
+      <workItem from="1583844736786" duration="4000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="296" key="FileChooserDialogImpl" timestamp="1578246727343">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="740" y="296" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1366.768@0.0.1920.1080" timestamp="1578246727343" />
+    <state x="821" y="231" key="SettingsEditor" timestamp="1577195364931">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="821" y="231" key="SettingsEditor/0.0.1920.1080/1920.0.1366.768@0.0.1920.1080" timestamp="1577195364931" />
+    <state x="646" y="114" width="627" height="852" key="find.popup" timestamp="1577708581098">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="646" y="114" width="627" height="852" key="find.popup/0.0.1920.1080/1920.0.1366.768@0.0.1920.1080" timestamp="1577708581098" />
+    <state x="616" y="250" key="run.anything.popup" timestamp="1576925061895">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="616" y="250" key="run.anything.popup/0.0.1920.1080/1920.0.1366.768@0.0.1920.1080" timestamp="1576925061895" />
+    <state x="616" y="192" width="670" height="676" key="search.everywhere.popup" timestamp="1578228777963">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="616" y="192" width="670" height="676" key="search.everywhere.popup/0.0.1920.1080/1920.0.1366.768@0.0.1920.1080" timestamp="1578228777963" />
+  </component>
+</project>
